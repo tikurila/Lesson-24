@@ -1,0 +1,76 @@
+<h2>Записаться</h2>
+<p>На этой странице вы можете записаться в наш barber shop!</p>
+
+<form action = "/visit" method = "POST" role = "form">
+  <div class="form-group">
+    <label>Ваше имя:</label>
+    <input id='tt'name="username" type="txt" class="form-control" placeholder="Введите ваше имя">
+ </div>
+
+
+  <div class="form-group">
+    <label>Ваш телефон:</label>
+    <input id='bb' name="phone" type="txt" class="form-control" placeholder="Введите ваш номер телефона">
+ </div>
+
+  <div class="form-group">
+    <label>Когда вас ждать?</label>
+    <input id='nn' name="data_time" type="txt" class="form-control" placeholder="Введите время и дату">
+ </div>
+
+
+<div class="form-group">
+    <label>Ваш парикмахер:</label>
+<select id='ee' name="barber"  class="form-control">
+  <option>Dean Winchester</option>
+  <option>Sam Winchester</option>
+  <option>Castiel</option>
+  <option>Crowley</option>
+  <option>Jak</option>
+</select>
+ </div>
+
+
+
+<input type='submit' class="btn btn-info"/>
+
+
+<script type="text/javascript">
+	$('#nn').css('background-color','green');
+	$('#bb').css('background-color','red');
+		$('#ee').css('background-color','yellow');
+	$('#tt').css('background-color','blue');
+</script>
+<br/>
+
+<div class="form-group">   
+Выберите цвет для покраски:
+<select  id ="color" name="colors">
+  <option  value ="#7bd148">Зеленый</option>
+  <option  value = "#5484ed">Жирный синий</option>
+  <option  value = "#a4bdfc">Синий</option>
+  <option  value = "#46d6db">Бирюзовый</option>
+  <option  value = "#7ae7bf">Светло-зелены</option>
+  <option  value = "#51b749">Жирный зеленый </option>
+  <option  value = "#fbd75b">Желтый</option>
+  <option  value = "#ffb878">Orange</option>
+  <option  value = "#ff887c">Красный</option>
+  <option  value = "#dc2127">Жирный красный</option>
+  <option  value = "#dbadff">Фиолетовый</option>
+  <option  value = "#e1e1e1">Серый</option>
+</select>
+
+ </div>
+
+</form>
+<script type="text/javascript">
+
+  
+
+  $ (function(){
+
+    $ ('#color').simplecolorpicker();
+
+  })
+
+</script>
