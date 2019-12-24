@@ -8,7 +8,7 @@ get '/' do
 end
 
 get '/about' do
-	@error = 'Чтото пошло не так'
+	
 	erb :about
 end	
 
@@ -29,37 +29,22 @@ post '/visit' do
 	@barber = params[:barber]
 	@colors = params[:colors]
 
+
+  hh = {  :username => 'Введите имя',
+  		  :phone => 'Введите телефон',
+  		  :data_time => 'Введите дату и время' }
+
+		@error = hh.select {|key,_| params[key] == ""}.values.join(",")
+
+		if @error != ""
+			return erb :visit
+		end	
+
 	
-
-	if @username == ''
-		@error = "Введите ваше имя" 
-		return erb :visit
-   end
-
-   if @phone == ''
-   		@error = "Введите ваш телефон "
-   	 return erb :visit
-   end		
-
-   if @data_time == ''
-   	@error = "Введите дату и время "
-     return erb :visit
-   end
-   
-   if @barber == ''
-   	@error = "Введите парикмахера"
-
-   elsif @barber == 'Список парикмахеров:'
-   	@error = "Введите парикмахера"
-return erb :visit
-   end
-
-   
-
-
 erb "Пользователь: #{@username} Время записи: #{@data_time} Связь с клиентом #{@phone}  Парикмахер: #{@barber} Выбран цвет: #{@colors} "
 
 
 end	
+
 
 
